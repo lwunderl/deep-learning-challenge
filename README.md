@@ -2,6 +2,9 @@
 
 ## Data Preprocessing
 
+### Overview: 
+* The purpose of this analysis is to create a tool that can help select future applicants for funding with the best chance of success based on features of historical sucesses and failures.
+
 ### What variable(s) are the target(s) for your model?
 * The target variable is the IS_SUCCESSFUL feature.
 
@@ -15,12 +18,12 @@
 
 ### How many neurons, layers, and activation functions did you select for your neural network model, and why?
 
-I selected 80 input dimensions starting with 64 units and leaky_relu activation followed by 5 hidden layers diminishing the units by half each layer and activation transitioning from leaky_relu to relu to tanh and a final sigmoid output. I chose this through trail and error and advice suggesting a larger to smaller pyramid shape for units per layer and advice suggesting starting with more complex activations transitioning to less complex activations.
+I selected 80 input dimensions starting with 64 units and leaky_relu activation followed by 5 hidden layers diminishing the units by half each layer and activation transitioning from leaky_relu to relu to tanh and a final sigmoid output. I chose this through trail and error and advice from others suggesting a larger to smaller pyramid shape for units per layer and advice suggesting starting with more complex activations transitioning to less complex activations. I assumed the leaky_relu and relu functions were more complex than tanh or sigmoid.
 
 ### Were you able to achieve the target model performance? What steps did you take in your attempts to increase model performance?
 
-Summary: The model acheived 75.96% performance on test data of 20% of total. I made several attempts to adjust and bin the input dimensions with a standard NN model. I discovered that more dimensions improved the validation accuracy and loss. I also noticed that having too many inputs on the standard model improved training performance but not validation performance. I tried a range of inputs from 23 to 106. It appeared that 50 to 80 inputs had the best results. I chose to stay with 80 inputs and then began to adjust the model with more and less layers and more and less units per layer as well as different activation functions.
+Summary: The model acheived 75.96% performance on test data of 20% of total. I made several attempts to adjust the number of bins and input dimensions with a standard NN model created in the first attempt. I discovered that more dimensions improved the validation accuracy and loss to a point. I also noticed that having too many inputs on the standard model improved training performance but not validation performance. I tried a range of inputs from 23 to 106. It appeared that 50 to 80 inputs had the best results. I chose to stay with 80 inputs and then began to adjust the model with more and less layers and more and less units per layer as well as different activation functions.
 
 ### Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
 
-Since this is a binary classification and the organization may have to explain reasoning for denied applications, I would suggest trying a decision tree model which can show importance of features and decision process.
+Since this is a binary classification and the organization may have to explain reasoning for denied applications, I would suggest trying a decision tree model which can show importance of features and the decision process.
